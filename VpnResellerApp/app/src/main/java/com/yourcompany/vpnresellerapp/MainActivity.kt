@@ -23,8 +23,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    // MainAppNavigation() // Placeholder for main navigation composable
-                    Greeting("Android")
+                    MainAppNavigation()
+                    // Greeting("Android")
                 }
             }
         }
