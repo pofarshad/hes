@@ -1,0 +1,88 @@
+[versions]
+# Build tools & Core
+gradlePlugin = "8.2.2" # Or your targeted AGP version
+kotlin = "1.9.22" # Ensure compatibility with Compose and KSP
+ksp = "1.9.22-1.0.17" # KSP version aligned with Kotlin
+coreKtx = "1.13.1"
+lifecycleRuntimeKtx = "2.8.0"
+activityCompose = "1.9.0"
+composeBom = "2024.05.00"
+material3 = "1.2.1"
+navigationCompose = "2.7.7"
+room = "2.6.1"
+coroutines = "1.8.0"
+# hilt = "2.51.1" # If using Hilt
+# googleServicesPlugin = "4.4.1" # For Firebase/Google Drive
+playServicesAuth = "21.2.0"
+# driveApi = "v3-rev20220815-2.0.0" # Example, check latest
+# sqlcipher = "4.5.3"
+workManager = "2.9.0"
+
+# Testing
+junit = "4.13.2"
+androidxTestExtJunit = "1.1.5" # Corrected from 1.1.5 to a more standard versioning if needed, or keep as is.
+espressoCore = "3.5.1"
+# mockitoKotlin = "4.1.0"
+
+# Android specific versions
+compileSdk = "34"
+minSdk = "26"
+targetSdk = "34"
+kotlinCompilerExtension = "1.5.10" # Check for latest compatible with Compose BOM
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleRuntimeKtx" } # Assuming same version for viewmodel
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycleRuntimeKtx" } # Assuming same version
+
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3"}
+
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
+# Room
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+# Coroutines
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Google Play Services Auth (for Sign-In)
+play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
+
+# WorkManager
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workManager" }
+
+
+# Testing
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxTestExtJunit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+# Hilt (Example, if chosen)
+# hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+# hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+# androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.2.0" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "gradlePlugin" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+android-library = { id = "com.android.library", version.ref = "gradlePlugin" }
+# hilt-gradle = { id = "com.google.dagger.hilt.android", version.ref = "hilt" } # If using Hilt
+# google-services = { id = "com.google.gms.google-services", version.ref = "googleServicesPlugin" } # For Firebase
+
+[bundles]
+# Example: compose = ["androidx.ui", "androidx.ui.graphics", "androidx.ui.tooling.preview", "androidx.material3"]
+# room = ["androidx-room-runtime", "androidx-room-ktx"]
