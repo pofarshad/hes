@@ -3,6 +3,7 @@ package com.vpnreseller.core_data.local.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.vpnreseller.core_domain.model.PaymentTransaction
+import com.vpnreseller.core_domain.model.TransactionType // Import TransactionType
 import java.util.Date
 
 /**
@@ -17,7 +18,8 @@ data class PaymentTransactionEntity(
     val paymentDate: Long, // Store as timestamp
     val amountPaid: Double,
     val paymentMethod: String,
-    val notes: String?
+    val notes: String?,
+    val type: String // Represents TransactionType enum
 )
 
 /**
@@ -31,7 +33,8 @@ fun PaymentTransactionEntity.toDomainModel(): PaymentTransaction {
         paymentDate = Date(paymentDate),
         amountPaid = amountPaid,
         paymentMethod = paymentMethod,
-        notes = notes
+        notes = notes,
+        type = TransactionType.valueOf(type)
     )
 }
 
@@ -46,6 +49,7 @@ fun PaymentTransaction.toEntity(): PaymentTransactionEntity {
         paymentDate = paymentDate.time,
         amountPaid = amountPaid,
         paymentMethod = paymentMethod,
-        notes = notes
+        notes = notes,
+        type = type.name
     )
 }

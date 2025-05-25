@@ -21,7 +21,8 @@ data class Representative(
     val parentRepresentativeId: String? = null,
     val defaultSubscriptionType: SubscriptionType = SubscriptionType.LIMITED,
     val defaultDurationMonths: Int = 1,
-    val isActive: Boolean = true
+    val isActive: Boolean = true,
+    val notes: String? = null
 ) : Parcelable
 
 /**

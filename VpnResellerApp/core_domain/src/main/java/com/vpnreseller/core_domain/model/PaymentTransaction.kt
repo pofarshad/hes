@@ -17,5 +17,16 @@ data class PaymentTransaction(
     val paymentDate: Date = Date(),
     val amountPaid: Double,
     val paymentMethod: String, // e.g., "Cash", "Bank Transfer", "Online"
-    val notes: String? = null
+    val notes: String? = null,
+    val type: TransactionType
 ) : Parcelable
+
+/**
+ * Transaction type enumeration
+ * CREDIT: Payment received from representative (reduces their debt / increases their balance)
+ * DEBIT: Charge issued to representative (e.g., new invoice, service fee - increases their debt / decreases their balance)
+ */
+enum class TransactionType {
+    CREDIT,
+    DEBIT
+}

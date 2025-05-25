@@ -6,17 +6,20 @@ import java.util.Date
 import java.util.UUID
 
 /**
- * Invoice header domain model
+ * Invoice domain model
  * Represents an invoice for a representative
  */
 @Parcelize
-data class InvoiceHeader(
+data class Invoice(
     val id: String = UUID.randomUUID().toString(),
     val representativeId: String,
     val generationDate: Date = Date(),
     val totalAmount: Double,
     val status: InvoiceStatus = InvoiceStatus.UNPAID,
-    val isSent: Boolean = false
+    val isSentToTelegram: Boolean = false, // Renamed from isSent for clarity
+    val pdfPath: String? = null,
+    val imagePath: String? = null,
+    val importedSheetData: Map<String, String>? = null // To store raw Google Sheet row
 ) : Parcelable
 
 /**

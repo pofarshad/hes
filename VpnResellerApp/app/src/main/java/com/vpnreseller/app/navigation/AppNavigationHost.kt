@@ -4,29 +4,29 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.vpnreseller.app.ui.home.HomeScreen
+import com.vpnreseller.app.ui.invoices.InvoiceImportScreen
+import com.vpnreseller.app.ui.invoices.InvoiceListScreen
 
-/**
- * Main navigation host for the VPN Reseller App
- * Manages navigation between different screens
- */
 @Composable
-fun AppNavigationHost(
-    navController: NavHostController = rememberNavController()
-) {
-    NavHost(
-        navController = navController,
-        startDestination = "home"
-    ) {
-        composable("home") {
-            HomeScreen(navController = navController)
+fun AppNavigationHost(navController: NavHostController) {
+    NavHost(navController = navController, startDestination = "invoiceList") {
+        composable("invoiceList") {
+            InvoiceListScreen(
+                onNavigateToInvoiceDetail = { invoiceId ->
+                    // TODO: Implement invoice detail navigation
+                },
+                onNavigateToImport = {
+                    navController.navigate("invoiceImport")
+                }
+            )
         }
-        
-        // TODO: Add other navigation destinations
-        // composable("representatives") { RepresentativesScreen(navController) }
-        // composable("invoices") { InvoicesScreen(navController) }
-        // composable("accounting") { AccountingScreen(navController) }
-        // composable("settings") { SettingsScreen(navController) }
+        composable("invoiceImport") {
+            InvoiceImportScreen(
+                onImportComplete = {
+                    navController.popBackStack()
+                }
+            )
+        }
+        // Other composable destinations...
     }
 }

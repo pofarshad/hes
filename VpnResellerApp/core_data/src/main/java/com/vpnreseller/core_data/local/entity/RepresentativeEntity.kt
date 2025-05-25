@@ -24,7 +24,8 @@ data class RepresentativeEntity(
     val parentRepresentativeId: String?,
     val defaultSubscriptionType: String,
     val defaultDurationMonths: Int,
-    val isActive: Boolean
+    val isActive: Boolean,
+    val notes: String?
 )
 
 /**
@@ -43,7 +44,8 @@ fun RepresentativeEntity.toDomainModel(): Representative {
         parentRepresentativeId = parentRepresentativeId,
         defaultSubscriptionType = SubscriptionType.valueOf(defaultSubscriptionType),
         defaultDurationMonths = defaultDurationMonths,
-        isActive = isActive
+        isActive = isActive,
+        notes = notes
     )
 }
 
@@ -63,6 +65,7 @@ fun Representative.toEntity(): RepresentativeEntity {
         parentRepresentativeId = parentRepresentativeId,
         defaultSubscriptionType = defaultSubscriptionType.name,
         defaultDurationMonths = defaultDurationMonths,
-        isActive = isActive
+        isActive = isActive,
+        notes = notes
     )
 }

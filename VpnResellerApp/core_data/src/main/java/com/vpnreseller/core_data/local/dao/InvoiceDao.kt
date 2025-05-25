@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import com.vpnreseller.core_data.local.entity.InvoiceHeaderEntity
+import com.vpnreseller.core_data.local.entity.InvoiceEntity // Changed from InvoiceHeaderEntity
 import com.vpnreseller.core_data.local.entity.InvoiceLineItemEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -19,52 +19,52 @@ interface InvoiceDao {
     // Invoice Header operations
     
     /**
-     * Get all invoice headers
+     * Get all invoices
      */
-    @Query("SELECT * FROM invoice_headers ORDER BY generationDate DESC")
-    fun getAllInvoiceHeaders(): Flow<List<InvoiceHeaderEntity>>
+    @Query("SELECT * FROM invoices ORDER BY generationDate DESC") // Changed from invoice_headers
+    fun getAllInvoices(): Flow<List<InvoiceEntity>> // Changed from InvoiceHeaderEntity
     
     /**
-     * Get invoice headers by representative ID
+     * Get invoices by representative ID
      */
-    @Query("SELECT * FROM invoice_headers WHERE representativeId = :representativeId ORDER BY generationDate DESC")
-    fun getInvoiceHeadersByRepresentative(representativeId: String): Flow<List<InvoiceHeaderEntity>>
+    @Query("SELECT * FROM invoices WHERE representativeId = :representativeId ORDER BY generationDate DESC") // Changed from invoice_headers
+    fun getInvoicesByRepresentative(representativeId: String): Flow<List<InvoiceEntity>> // Changed from InvoiceHeaderEntity
     
     /**
-     * Get invoice header by ID
+     * Get invoice by ID
      */
-    @Query("SELECT * FROM invoice_headers WHERE id = :id")
-    suspend fun getInvoiceHeaderById(id: String): InvoiceHeaderEntity?
+    @Query("SELECT * FROM invoices WHERE id = :id") // Changed from invoice_headers
+    suspend fun getInvoiceById(id: String): InvoiceEntity? // Changed from InvoiceHeaderEntity
     
     /**
      * Get unpaid invoices
      */
-    @Query("SELECT * FROM invoice_headers WHERE status = 'UNPAID' ORDER BY generationDate DESC")
-    fun getUnpaidInvoices(): Flow<List<InvoiceHeaderEntity>>
+    @Query("SELECT * FROM invoices WHERE status = 'UNPAID' ORDER BY generationDate DESC") // Changed from invoice_headers
+    fun getUnpaidInvoices(): Flow<List<InvoiceEntity>> // Changed from InvoiceHeaderEntity
     
     /**
      * Get invoices by status
      */
-    @Query("SELECT * FROM invoice_headers WHERE status = :status ORDER BY generationDate DESC")
-    fun getInvoicesByStatus(status: String): Flow<List<InvoiceHeaderEntity>>
+    @Query("SELECT * FROM invoices WHERE status = :status ORDER BY generationDate DESC") // Changed from invoice_headers
+    fun getInvoicesByStatus(status: String): Flow<List<InvoiceEntity>> // Changed from InvoiceHeaderEntity
     
     /**
-     * Insert invoice header
+     * Insert invoice
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertInvoiceHeader(invoiceHeader: InvoiceHeaderEntity)
+    suspend fun insertInvoice(invoice: InvoiceEntity) // Changed from invoiceHeader: InvoiceHeaderEntity
     
     /**
-     * Update invoice header
+     * Update invoice
      */
     @Update
-    suspend fun updateInvoiceHeader(invoiceHeader: InvoiceHeaderEntity)
+    suspend fun updateInvoice(invoice: InvoiceEntity) // Changed from invoiceHeader: InvoiceHeaderEntity
     
     /**
-     * Delete invoice header
+     * Delete invoice
      */
     @Delete
-    suspend fun deleteInvoiceHeader(invoiceHeader: InvoiceHeaderEntity)
+    suspend fun deleteInvoice(invoice: InvoiceEntity) // Changed from invoiceHeader: InvoiceHeaderEntity
     
     // Invoice Line Item operations
     
@@ -115,18 +115,18 @@ interface InvoiceDao {
     /**
      * Get total amount for a representative
      */
-    @Query("SELECT SUM(totalAmount) FROM invoice_headers WHERE representativeId = :representativeId")
+    @Query("SELECT SUM(totalAmount) FROM invoices WHERE representativeId = :representativeId") // Changed from invoice_headers
     suspend fun getTotalAmountByRepresentative(representativeId: String): Double?
     
     /**
      * Get total unpaid amount for a representative
      */
-    @Query("SELECT SUM(totalAmount) FROM invoice_headers WHERE representativeId = :representativeId AND status = 'UNPAID'")
+    @Query("SELECT SUM(totalAmount) FROM invoices WHERE representativeId = :representativeId AND status = 'UNPAID'") // Changed from invoice_headers
     suspend fun getUnpaidAmountByRepresentative(representativeId: String): Double?
     
     /**
      * Get invoice count by representative
      */
-    @Query("SELECT COUNT(*) FROM invoice_headers WHERE representativeId = :representativeId")
+    @Query("SELECT COUNT(*) FROM invoices WHERE representativeId = :representativeId") // Changed from invoice_headers
     suspend fun getInvoiceCountByRepresentative(representativeId: String): Int
 }

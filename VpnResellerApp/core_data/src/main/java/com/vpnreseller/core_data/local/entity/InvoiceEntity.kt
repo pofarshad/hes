@@ -2,23 +2,26 @@ package com.vpnreseller.core_data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.vpnreseller.core_domain.model.InvoiceHeader
+import com.vpnreseller.core_domain.model.Invoice // Changed from InvoiceHeader
 import com.vpnreseller.core_domain.model.InvoiceLineItem
 import com.vpnreseller.core_domain.model.InvoiceStatus
 import java.util.Date
 
 /**
- * Room entity for Invoice Header
+ * Room entity for Invoice
  */
-@Entity(tableName = "invoice_headers")
-data class InvoiceHeaderEntity(
+@Entity(tableName = "invoices") // Changed from invoice_headers
+data class InvoiceEntity(
     @PrimaryKey
     val id: String,
     val representativeId: String,
     val generationDate: Long, // Store as timestamp
     val totalAmount: Double,
-    val status: String,
-    val isSent: Boolean
+    val status: String, // Represents InvoiceStatus enum
+    val isSentToTelegram: Boolean, // Changed from isSent
+    val pdfPath: String?,
+    val imagePath: String?,
+    val importedSheetData: Map<String, String>? // Room will use TypeConverter
 )
 
 /**
@@ -36,30 +39,36 @@ data class InvoiceLineItemEntity(
 )
 
 /**
- * Extension function to convert InvoiceHeaderEntity to InvoiceHeader domain model
+ * Extension function to convert InvoiceEntity to Invoice domain model
  */
-fun InvoiceHeaderEntity.toDomainModel(): InvoiceHeader {
-    return InvoiceHeader(
+fun InvoiceEntity.toDomainModel(): Invoice {
+    return Invoice(
         id = id,
         representativeId = representativeId,
         generationDate = Date(generationDate),
         totalAmount = totalAmount,
         status = InvoiceStatus.valueOf(status),
-        isSent = isSent
+        isSentToTelegram = isSentToTelegram,
+        pdfPath = pdfPath,
+        imagePath = imagePath,
+        importedSheetData = importedSheetData // Pass through, Room handles conversion
     )
 }
 
 /**
- * Extension function to convert InvoiceHeader domain model to InvoiceHeaderEntity
+ * Extension function to convert Invoice domain model to InvoiceEntity
  */
-fun InvoiceHeader.toEntity(): InvoiceHeaderEntity {
-    return InvoiceHeaderEntity(
+fun Invoice.toEntity(): InvoiceEntity {
+    return InvoiceEntity(
         id = id,
         representativeId = representativeId,
         generationDate = generationDate.time,
         totalAmount = totalAmount,
         status = status.name,
-        isSent = isSent
+        isSentToTelegram = isSentToTelegram,
+        pdfPath = pdfPath,
+        imagePath = imagePath,
+        importedSheetData = importedSheetData // Pass through, Room handles conversion
     )
 }
 

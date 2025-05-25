@@ -1,5 +1,13 @@
-<resources>
-    <string name="app_name">سیستم فروش VPN</string>
-    <string name="main_dashboard">داشبورد اصلی</string>
-    <string name="welcome_message">به سیستم خوش آمدید</string>
+</resources>
+=======
+    <string name="subscription_type_unlimited">نامحدود</string>
+
+    <!-- Invoice UI -->
+    <string name="invoices_title">فاکتورها</string>
+    <string name="empty_invoices_list">هیچ فاکتوری یافت نشد.</string>
+    <string name="import_invoices_fab_description">وارد کردن فاکتورها از گوگل شیت</string>
+    <string name="import_invoices_screen_title">وارد کردن فاکتورها</string>
+    <string name="label_spreadsheet_id">شناسه صفحه گسترده</string>
+    <string name="label_range">محدوده</string>
+    <string name="button_import">وارد کردن</string>
 </resources>
