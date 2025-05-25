@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--
-        Base application theme.
-        Updated to Material3 compatible theme.
+        Updated to remove references to older Material attributes (colorPrimary, etc.)
+        which are not defined in Material3.
+        Compose-based theming handles colors from code.
     -->
     <style name="Theme.VpnResellerApp" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/md_theme_light_primary</item>
-        <item name="colorPrimaryVariant">@color/md_theme_light_primaryContainer</item>
-        <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/md_theme_light_secondary</item>
-        <item name="colorSecondaryVariant">@color/md_theme_light_secondaryContainer</item>
-        <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <!-- Set a minimal XML-based definition to avoid resource linking errors. -->
+        <!--
+            If needed, define system UI colors below,
+            but ensure consistency with Compose-based theming.
+        -->
+        <item name="android:statusBarColor">?android:attr/statusBarColor</item>
+        <item name="android:navigationBarColor">?android:attr/navigationBarColor</item>
     </style>
 </resources>
