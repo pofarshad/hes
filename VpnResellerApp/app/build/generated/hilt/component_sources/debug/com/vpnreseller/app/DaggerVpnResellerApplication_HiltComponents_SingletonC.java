@@ -16,8 +16,8 @@ import com.vpnreseller.app.ui.representatives.RepresentativesViewModel_HiltModul
 import com.vpnreseller.core_data.di.DatabaseModule_ProvideInvoiceDaoFactory;
 import com.vpnreseller.core_data.di.DatabaseModule_ProvideRepresentativeDaoFactory;
 import com.vpnreseller.core_data.di.DatabaseModule_ProvideVpnResellerDatabaseFactory;
+import com.vpnreseller.core_data.di.GoogleSheetsModule;
 import com.vpnreseller.core_data.di.GoogleSheetsModule_ProvideApplicationNameFactory;
-import com.vpnreseller.core_data.di.GoogleSheetsModule_ProvideCredentialsInputStreamFactory;
 import com.vpnreseller.core_data.google.GoogleSheetsService;
 import com.vpnreseller.core_data.local.dao.InvoiceDao;
 import com.vpnreseller.core_data.local.dao.RepresentativeDao;
@@ -615,7 +615,7 @@ public final class DaggerVpnResellerApplication_HiltComponents_SingletonC {
           return (T) DatabaseModule_ProvideVpnResellerDatabaseFactory.provideVpnResellerDatabase(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
 
           case 2: // java.io.InputStream 
-          return (T) GoogleSheetsModule_ProvideCredentialsInputStreamFactory.provideCredentialsInputStream(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
+          return (T) GoogleSheetsModule.INSTANCE.provideCredentialsInputStream(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));
 
           case 3: // @javax.inject.Named("applicationName") java.lang.String 
           return (T) GoogleSheetsModule_ProvideApplicationNameFactory.provideApplicationName(ApplicationContextModule_ProvideContextFactory.provideContext(singletonCImpl.applicationContextModule));

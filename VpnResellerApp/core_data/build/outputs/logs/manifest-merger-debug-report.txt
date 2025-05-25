@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13438062908163476892.xml:2:13-83
-INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13438062908163476892.xml:2:13-83
+ADDED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest1820741997784929829.xml:2:13-83
+INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest1820741997784929829.xml:2:13-83
 	package
-		INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13438062908163476892.xml
+		INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest1820741997784929829.xml
 	xmlns:android
-		ADDED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13438062908163476892.xml:2:23-81
+		ADDED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest1820741997784929829.xml:2:23-81
 uses-sdk
-INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13438062908163476892.xml reason: use-sdk injection requested
-INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13438062908163476892.xml
-INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13438062908163476892.xml
+INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest1820741997784929829.xml reason: use-sdk injection requested
+INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest1820741997784929829.xml
+INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest1820741997784929829.xml
 	android:targetSdkVersion
-		INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13438062908163476892.xml
+		INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest1820741997784929829.xml
 	android:minSdkVersion
-		INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13438062908163476892.xml
+		INJECTED from /workspaces/hes/VpnResellerApp/core_data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest1820741997784929829.xml
