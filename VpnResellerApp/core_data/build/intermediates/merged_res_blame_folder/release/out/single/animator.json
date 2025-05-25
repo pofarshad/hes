@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.vpnreseller.core_data-merged_res-18:/animator/fragment_open_exit.xml",
+        "source": "com.vpnreseller.core_data-fragment-1.5.1-11:/animator/fragment_open_exit.xml"
+    },
+    {
+        "merged": "com.vpnreseller.core_data-merged_res-18:/animator/fragment_close_enter.xml",
+        "source": "com.vpnreseller.core_data-fragment-1.5.1-11:/animator/fragment_close_enter.xml"
+    },
+    {
+        "merged": "com.vpnreseller.core_data-merged_res-18:/animator/fragment_fade_enter.xml",
+        "source": "com.vpnreseller.core_data-fragment-1.5.1-11:/animator/fragment_fade_enter.xml"
+    },
+    {
+        "merged": "com.vpnreseller.core_data-merged_res-18:/animator/fragment_close_exit.xml",
+        "source": "com.vpnreseller.core_data-fragment-1.5.1-11:/animator/fragment_close_exit.xml"
+    },
+    {
+        "merged": "com.vpnreseller.core_data-merged_res-18:/animator/fragment_fade_exit.xml",
+        "source": "com.vpnreseller.core_data-fragment-1.5.1-11:/animator/fragment_fade_exit.xml"
+    },
+    {
+        "merged": "com.vpnreseller.core_data-merged_res-18:/animator/fragment_open_enter.xml",
+        "source": "com.vpnreseller.core_data-fragment-1.5.1-11:/animator/fragment_open_enter.xml"
+    }
+]

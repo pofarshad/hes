@@ -1,0 +1,174 @@
+/home/codespace/.gradle/caches/8.8/transforms/351255c99624c5377bfae992f343ef90/transformed/runtime-release/jars/lint.jar: Warning: Library lint checks reference invalid APIs; these checks will be skipped!
+
+Lint found an issue registry (androidx.compose.runtime.lint.RuntimeIssueRegistry)
+which contains some references to invalid API:
+org.jetbrains.kotlin.analysis.api.session.KtAnalysisSessionProvider: org.jetbrains.kotlin.analysis.api.lifetime.KtLifetimeTokenFactory getTokenFactory()
+(Referenced from androidx/compose/runtime/lint/AutoboxingStateCreationDetector.class)
+
+Therefore, this lint check library is not included
+in analysis. This affects the following lint checks:
+AutoboxingStateValueProperty
+AutoboxingStateCreation
+CoroutineCreationDuringComposition
+FlowOperatorInvokedInComposition
+ComposableLambdaParameterNaming
+ComposableLambdaParameterPosition
+ComposableNaming
+StateFlowValueCalledInComposition
+CompositionLocalNaming
+MutableCollectionMutableState
+ProduceStateDoesNotAssignValue
+RememberReturnType
+OpaqueUnitKey
+UnrememberedMutableState
+
+To use this lint check, upgrade to a more recent version
+of the library. [ObsoleteLintCustomCheck]
+/home/codespace/.gradle/caches/8.8/transforms/ea14ad62f0aacf1d70d0b1aee2e8406b/transformed/ui-release/jars/lint.jar: Warning: Library lint checks reference invalid APIs; these checks will be skipped!
+
+Lint found an issue registry (androidx.compose.ui.lint.UiIssueRegistry)
+which contains some references to invalid API:
+org.jetbrains.kotlin.analysis.api.session.KtAnalysisSessionProvider: org.jetbrains.kotlin.analysis.api.lifetime.KtLifetimeTokenFactory getTokenFactory()
+(Referenced from androidx/compose/ui/lint/ModifierDeclarationDetectorKt$ensureReceiverIsReferenced$1.class)
+
+Therefore, this lint check library is not included
+in analysis. This affects the following lint checks:
+UnnecessaryComposedModifier
+ModifierFactoryExtensionFunction
+ModifierFactoryReturnType
+ModifierFactoryUnreferencedReceiver
+ModifierNodeInspectableProperties
+ModifierParameter
+MultipleAwaitPointerEventScopes
+ReturnFromAwaitPointerEventScope
+SuspiciousCompositionLocalModifierRead
+SuspiciousModifierThen
+
+To use this lint check, upgrade to a more recent version
+of the library. [ObsoleteLintCustomCheck]
+/home/codespace/.gradle/caches/8.8/transforms/4a1f8a1e2731aebe2f374e0aea0c2ee7/transformed/lifecycle-livedata-core-2.8.6/jars/lint.jar: Warning: Library lint checks reference invalid APIs; these checks will be skipped!
+
+Lint found an issue registry (androidx.lifecycle.lint.LiveDataCoreIssueRegistry)
+which contains some references to invalid API:
+org.jetbrains.kotlin.analysis.api.session.KtAnalysisSessionProvider: org.jetbrains.kotlin.analysis.api.lifetime.KtLifetimeTokenFactory getTokenFactory()
+(Referenced from androidx/lifecycle/lint/NonNullableMutableLiveDataDetector$createUastHandler$1.class)
+
+Therefore, this lint check library is not included
+in analysis. This affects the following lint checks:
+NullSafeMutableLiveData
+
+To use this lint check, upgrade to a more recent version
+of the library. [ObsoleteLintCustomCheck]
+/home/codespace/.gradle/caches/8.8/transforms/401407453b06c06eb5d6e086eb13d657/transformed/navigation-common-2.8.2/jars/lint.jar: Warning: Library lint checks reference invalid APIs; these checks will be skipped!
+
+Lint found an issue registry (androidx.navigation.common.lint.NavigationCommonIssueRegistry)
+which contains some references to invalid API:
+com.android.tools.lint.checks.infrastructure.TestFiles: com.android.tools.lint.checks.infrastructure.TestFile bytecode(java.lang.String,com.android.tools.lint.checks.infrastructure.TestFile,long,java.lang.String[])
+(Referenced from androidx/navigation/lint/common/LintUtilKt.class)
+
+Therefore, this lint check library is not included
+in analysis. This affects the following lint checks:
+EmptyNavDeepLink,WrongStartDestinationType
+
+To use this lint check, upgrade to a more recent version
+of the library. [ObsoleteLintCustomCheck]
+/home/codespace/.gradle/caches/8.8/transforms/ec117e69d6a393ccc708ead7c09be59c/transformed/navigation-compose-2.8.2/jars/lint.jar: Warning: Library lint checks reference invalid APIs; these checks will be skipped!
+
+Lint found an issue registry (androidx.navigation.compose.lint.NavigationComposeIssueRegistry)
+which contains some references to invalid API:
+com.android.tools.lint.checks.infrastructure.TestFiles: com.android.tools.lint.checks.infrastructure.TestFile bytecode(java.lang.String,com.android.tools.lint.checks.infrastructure.TestFile,long,java.lang.String[])
+(Referenced from androidx/navigation/lint/common/LintUtilKt.class)
+
+Therefore, this lint check library is not included
+in analysis. This affects the following lint checks:
+ComposableDestinationInComposeScope,ComposableNavGraphInComposeScope,UnrememberedGetBackStackEntry,WrongStartDestinationType
+
+To use this lint check, upgrade to a more recent version
+of the library. [ObsoleteLintCustomCheck]
+/home/codespace/.gradle/caches/8.8/transforms/5728bef43d36cf88d0e3817039ad8590/transformed/navigation-runtime-2.8.2/jars/lint.jar: Warning: Library lint checks reference invalid APIs; these checks will be skipped!
+
+Lint found an issue registry (androidx.navigation.runtime.lint.NavigationRuntimeIssueRegistry)
+which contains some references to invalid API:
+com.android.tools.lint.checks.infrastructure.TestFiles: com.android.tools.lint.checks.infrastructure.TestFile bytecode(java.lang.String,com.android.tools.lint.checks.infrastructure.TestFile,long,java.lang.String[])
+(Referenced from androidx/navigation/lint/common/LintUtilKt.class)
+
+Therefore, this lint check library is not included
+in analysis. This affects the following lint checks:
+DeepLinkInActivityDestination,WrongStartDestinationType,WrongNavigateRouteType
+
+To use this lint check, upgrade to a more recent version
+of the library. [ObsoleteLintCustomCheck]
+
+   Explanation for issues of type "ObsoleteLintCustomCheck":
+   Lint can be extended with "custom checks": additional checks implemented by
+   developers and libraries to for example enforce specific API usages
+   required by a library or a company coding style guideline.
+
+   The Lint APIs are not yet stable, so these checks may either cause a
+   performance degradation, or stop working, or provide wrong results.
+
+   This warning flags custom lint checks that are found to be using obsolete
+   APIs and will need to be updated to run in the current lint environment.
+
+   It may also flag issues found to be using a newer version of the API,
+   meaning that you need to use a newer version of lint (or Android Studio or
+   Gradle plugin etc) to work with these checks.
+
+/workspaces/hes/VpnResellerApp/app/build.gradle.kts:60: Warning: A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0 [GradleDependency]
+    implementation("androidx.core:core-ktx:1.13.1")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/build.gradle.kts:61: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.6 is available: 2.9.0 [GradleDependency]
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/build.gradle.kts:62: Warning: A newer version of androidx.activity:activity-compose than 1.9.2 is available: 1.10.1 [GradleDependency]
+    implementation("androidx.activity:activity-compose:1.9.2")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/build.gradle.kts:70: Warning: A newer version of androidx.navigation:navigation-compose than 2.8.2 is available: 2.9.0 [GradleDependency]
+    implementation("androidx.navigation:navigation-compose:2.8.2")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/build.gradle.kts:78: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.6 is available: 2.9.0 [GradleDependency]
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/workspaces/hes/VpnResellerApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/workspaces/hes/VpnResellerApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/workspaces/hes/VpnResellerApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/workspaces/hes/VpnResellerApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+/workspaces/hes/VpnResellerApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: Launcher icon used as round icon did not have a circular shape [IconLauncherShape]
+
+   Explanation for issues of type "IconLauncherShape":
+   According to the Android Design Guide
+   (https://d.android.com/r/studio-ui/designer/material/iconography) your
+   launcher icons should "use a distinct silhouette", a "three-dimensional,
+   front view, with a slight perspective as if viewed from above, so that
+   users perceive some depth."
+
+   The unique silhouette implies that your launcher icon should not be a
+   filled square.
+
+/workspaces/hes/VpnResellerApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png: Warning: The image ic_launcher.png varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher.png: 64x64 dp (96x96 px), mipmap-mdpi/ic_launcher.png: 96x96 dp (96x96 px), mipmap-xhdpi/ic_launcher.png: 48x48 dp (96x96 px), mipmap-xxhdpi/ic_launcher.png: 32x32 dp (96x96 px), mipmap-xxxhdpi/ic_launcher.png: 24x24 dp (96x96 px) [IconDipSize]
+/workspaces/hes/VpnResellerApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: The image ic_launcher_round.png varies significantly in its density-independent (dip) size across the various density versions: mipmap-hdpi/ic_launcher_round.png: 64x64 dp (96x96 px), mipmap-mdpi/ic_launcher_round.png: 96x96 dp (96x96 px), mipmap-xhdpi/ic_launcher_round.png: 48x48 dp (96x96 px), mipmap-xxhdpi/ic_launcher_round.png: 32x32 dp (96x96 px), mipmap-xxxhdpi/ic_launcher_round.png: 24x24 dp (96x96 px) [IconDipSize]
+
+   Explanation for issues of type "IconDipSize":
+   Checks the all icons which are provided in multiple densities, all compute
+   to roughly the same density-independent pixel (dip) size. This catches
+   errors where images are either placed in the wrong folder, or icons are
+   changed to new sizes but some folders are forgotten.
+
+/workspaces/hes/VpnResellerApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png: Warning: The following unrelated icon files have identical contents: ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png, ic_launcher.png, ic_launcher_round.png [IconDuplicates]
+
+   Explanation for issues of type "IconDuplicates":
+   If an icon is repeated under different names, you can consolidate and just
+   use one of the icons and delete the others to make your application
+   smaller. However, duplicated icons usually are not intentional and can
+   sometimes point to icons that were accidentally overwritten or accidentally
+   not updated.
+
+0 errors, 19 warnings

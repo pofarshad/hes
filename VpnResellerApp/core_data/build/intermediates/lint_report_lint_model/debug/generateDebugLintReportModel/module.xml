@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/workspaces/hes/VpnResellerApp/core_data"
+    name=":core_data"
+    type="LIBRARY"
+    maven="VpnResellerApp:core_data:"
+    agpVersion="8.2.2"
+    buildFolder="build"
+    bootClassPath="/workspaces/hes/VpnResellerApp/platforms/android-34/android.jar:/workspaces/hes/VpnResellerApp/build-tools/34.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>

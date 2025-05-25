@@ -1,0 +1,10 @@
+R_DEF: Internal format may change without notice
+local
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string main_dashboard
+string welcome_message
+style Theme.VpnResellerApp
+xml backup_rules
+xml data_extraction_rules
