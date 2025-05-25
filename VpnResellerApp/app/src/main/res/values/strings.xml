@@ -1,5 +1,5 @@
-</resources>
-=======
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
     <string name="subscription_type_unlimited">نامحدود</string>
 
     <!-- Invoice UI -->
@@ -11,3 +11,4 @@
     <string name="label_range">محدوده</string>
     <string name="button_import">وارد کردن</string>
 </resources>
+</create_file>

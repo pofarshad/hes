@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">سیستم فروش VPN</string>
-    <string name="main_dashboard">داشبورد اصلی</string>
-    <string name="welcome_message">به سیستم خوش آمدید</string>
-    <style name="Theme.VpnResellerApp" parent="android:Theme.Material.Light.NoActionBar"/>
-</resources>
