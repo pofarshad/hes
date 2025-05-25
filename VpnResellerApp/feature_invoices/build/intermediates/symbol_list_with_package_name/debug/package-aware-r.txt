@@ -1,1 +1,0 @@
-com.yourcompany.vpnresellerapp.feature_invoices

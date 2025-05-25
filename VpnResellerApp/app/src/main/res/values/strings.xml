@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">مدیریت فروش VPN</string> <!-- VPN Reseller Management in Persian -->
+    <string name="app_name">سیستم فروش VPN</string>
+    <string name="main_dashboard">داشبورد اصلی</string>
+    <string name="welcome_message">به سیستم خوش آمدید</string>
+    <string name="representatives">نمایندگان</string>
+    <string name="invoices">فاکتورها</string>
+    <string name="accounting">حسابداری</string>
+    <string name="settings">تنظیمات</string>
+    <string name="add">افزودن</string>
+    <string name="edit">ویرایش</string>
+    <string name="delete">حذف</string>
+    <string name="save">ذخیره</string>
+    <string name="cancel">لغو</string>
+    <string name="ok">تایید</string>
+    <string name="error">خطا</string>
+    <string name="loading">در حال بارگذاری...</string>
+    <string name="no_data">داده‌ای موجود نیست</string>
 </resources>

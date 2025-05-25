@@ -1,2 +1,0 @@
-com.yourcompany.vpnresellerapp.feature_representatives.R
-com.yourcompany.vpnresellerapp.feature_representatives.R: R()

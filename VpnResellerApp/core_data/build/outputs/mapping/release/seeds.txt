@@ -1,2 +1,0 @@
-com.yourcompany.vpnresellerapp.core_data.R
-com.yourcompany.vpnresellerapp.core_data.R: R()

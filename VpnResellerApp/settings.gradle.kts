@@ -22,4 +22,3 @@ include(":feature_representatives")
 include(":feature_invoices")
 include(":feature_accounting")
 include(":feature_settings")
-// include(":feature_analytics") // Will be added in a later phase

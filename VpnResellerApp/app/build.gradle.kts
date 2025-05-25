@@ -1,17 +1,18 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.ksp) // For Room or other annotation processors
-    // Potentially add Hilt plugin here if chosen for DI: id("com.google.dagger.hilt.android")
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "com.yourcompany.vpnresellerapp"
+    namespace = "com.vpnreseller.app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.yourcompany.vpnresellerapp"
-        minSdk = 26 // Android 8.0 Oreo - Consider based on feature requirements like encryption
+        applicationId = "com.vpnreseller.app"
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -24,30 +25,25 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true // Enable Proguard/R8 for release builds
-            isShrinkResources = true
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
-        debug {
-            isMinifyEnabled = false
-            applicationIdSuffix = ".debug"
-        }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8 // Or higher if needed, e.g., 17 for newer AGP
-        targetCompatibility = JavaVersion.VERSION_1_8 // Or higher
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8" // Or higher
+        jvmTarget = "1.8"
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtension.get()
+        kotlinCompilerExtensionVersion = "1.5.4"
     }
     packaging {
         resources {
@@ -64,56 +60,36 @@ dependencies {
     implementation(project(":feature_invoices"))
     implementation(project(":feature_accounting"))
     implementation(project(":feature_settings"))
-    // implementation(project(":feature_analytics")) // To be added later
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-
-    implementation("com.google.android.material:material:1.9.0")
-
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.activity:activity-compose:1.8.2")
+    implementation(platform("androidx.compose:compose-bom:2023.10.01"))
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
+    
+    // Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.5")
+    
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+    
     // ViewModel
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-
-    // Navigation Compose
-    implementation(libs.androidx.navigation.compose)
-
-    // Coroutines
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
-
-    // Room (core_data will have the main implementation, app might need runtime)
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
-
-    // Google Sign-In (for Drive API)
-    implementation(libs.play.services.auth)
-
-    // WorkManager for background tasks (e.g., daily backups)
-    implementation(libs.androidx.work.runtime.ktx)
-
-
-    // Testing
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
-
-    // Hilt or Koin for Dependency Injection (Example for Hilt)
-    // implementation("com.google.dagger:hilt-android:${Versions.HILT}")
-    // ksp("com.google.dagger:hilt-compiler:${Versions.HILT}")
-    // implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.01"))
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
 
-// If using Hilt
-// apply(plugin = "com.google.dagger.hilt.android")
+kapt {
+    correctErrorTypes = true
+}

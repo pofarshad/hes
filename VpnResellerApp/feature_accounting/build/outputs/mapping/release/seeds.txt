@@ -1,2 +1,0 @@
-com.yourcompany.vpnresellerapp.feature_accounting.R
-com.yourcompany.vpnresellerapp.feature_accounting.R: R()

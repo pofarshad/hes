@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--
-        Replacing Theme.Material3.DayNight.NoActionBar with the standard
-        MaterialComponents theme for XML to avoid resource linking errors.
-        Compose-based theming will remain in code via VpnResellerAppTheme.
-    -->
-    <style name="Theme.VpnResellerApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Minimal XML-based definitions; Compose primarily dictates UI theming. -->
-        <item name="android:statusBarColor">?android:attr/statusBarColor</item>
-        <item name="android:navigationBarColor">?android:attr/navigationBarColor</item>
-    </style>
+    <style name="Theme.VpnResellerApp" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

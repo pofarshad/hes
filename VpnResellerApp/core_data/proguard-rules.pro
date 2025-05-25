@@ -1,24 +1,29 @@
-# Add project specific ProGuard rules here for this library module.
-# Keep Room entities, DAOs, and TypeConverters
--keep class androidx.room.** { *; }
--keep class com.yourcompany.vpnresellerapp.core_data.database.model.** { *; }
--keep interface com.yourcompany.vpnresellerapp.core_data.database.dao.** { *; }
--keep class com.yourcompany.vpnresellerapp.core_data.database.util.** { *; } # For TypeConverters
+# Add project specific ProGuard rules here.
+# You can control the set of applied configuration files using the
+# proguardFiles setting in build.gradle.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
 
-# If using SQLCipher
-# -keep class net.sqlcipher.** { *; }
-# -keep class net.zetetic.database.sqlcipher.** { *; }
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
 
-# If using Google Drive API client libraries
-# -keep class com.google.api.client.** { *; }
-# -keep class com.google.api.services.drive.** { *; }
-# -dontwarn com.google.api.client.util.GenericData
-# -dontwarn com.google.common.base.Preconditions # If using Guava from Drive client
+# Uncomment this to preserve the line number information for
+# debugging stack traces.
+#-keepattributes SourceFile,LineNumberTable
 
-# If using Apache POI
-# -keep class org.apache.poi.** { *; }
-# -dontwarn org.apache.poi.**
-# -dontwarn org.apache.xmlbeans.**
-# -dontwarn org.openxmlformats.schemas.**
-# -dontwarn org.w3c.dom.**
-# -dontwarn javax.xml.**
+# If you keep the line number information, uncomment this to
+# hide the original source file name.
+#-renamesourcefileattribute SourceFile
+
+# Keep Room entities and DAOs
+-keep class com.vpnreseller.core_data.local.entity.** { *; }
+-keep class com.vpnreseller.core_data.local.dao.** { *; }
+
+# Keep Hilt generated classes
+-keep class dagger.hilt.** { *; }
+-keep class javax.inject.** { *; }

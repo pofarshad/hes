@@ -1,36 +1,29 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.ksp) // For Room
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "com.yourcompany.vpnresellerapp.core_data"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    namespace = "com.vpnreseller.core_data"
+    compileSdk = 34
 
     defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
+        minSdk = 24
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-
-        // For Room + SQLCipher (if you choose this path for encryption)
-        // javaCompileOptions {
-        //     annotationProcessorOptions {
-        //         arguments(mapOf("room.schemaLocation" to "$projectDir/schemas".toString()))
-        //     }
-        // }
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-        }
-        debug {
-            isMinifyEnabled = false
         }
     }
     compileOptions {
@@ -40,40 +33,34 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    // Needed for Room schema location if not using KSP argument
-    // sourceSets {
-    //     androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
-    // }
 }
 
 dependencies {
-    implementation(project(":core_domain")) // Depends on domain models/interfaces
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.kotlinx.coroutines.core)
-
+    implementation(project(":core_domain"))
+    
+    implementation("androidx.core:core-ktx:1.12.0")
+    
     // Room
-    api(libs.androidx.room.runtime) // api so app module can use it for AppDatabase instance
-    api(libs.androidx.room.ktx)     // api for coroutine support convenience
-    ksp(libs.androidx.room.compiler)
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    
+    // Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    
+    // CSV parsing (simple alternative to Apache POI)
+    implementation("com.opencsv:opencsv:5.8")
+    
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
 
-    // SQLCipher for Room encryption (Example - ensure you have the right dependency)
-    // api("net.zetetic:android-database-sqlcipher:${Versions.SQLCIPHER}") // Check libs.versions.toml
-    // implementation("androidx.sqlite:sqlite-ktx:2.4.0") // For SafeHelperFactory
-
-    // Google Drive API (client library, not auth which is in app module)
-    // implementation("com.google.apis:google-api-services-drive:${Versions.DRIVE_API}") // Check libs.versions.toml
-    // implementation("com.google.http-client:google-http-client-gson:1.42.3") // Or other http client
-
-    // Apache POI for Excel (if chosen) - be mindful of its size
-    // implementation("org.apache.poi:poi:5.2.3")
-    // implementation("org.apache.poi:poi-ooxml:5.2.3")
-
-
-    // Testing
-    testImplementation(libs.junit)
-    // testImplementation("org.mockito.kotlin:mockito-kotlin:${Versions.MOCKITO_KOTLIN}") // Check libs.versions.toml
-    // testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${libs.versions.coroutines.get()}")
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+kapt {
+    correctErrorTypes = true
 }
