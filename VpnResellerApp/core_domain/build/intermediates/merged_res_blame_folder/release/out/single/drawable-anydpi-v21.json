@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/drawable-anydpi-v21/ic_call_answer_video_low.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/drawable-anydpi-v21/ic_call_answer_video_low.xml"
+    },
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/drawable-anydpi-v21/ic_call_answer.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/drawable-anydpi-v21/ic_call_answer.xml"
+    },
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/drawable-anydpi-v21/ic_call_decline.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/drawable-anydpi-v21/ic_call_decline.xml"
+    },
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/drawable-anydpi-v21/ic_call_answer_low.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/drawable-anydpi-v21/ic_call_answer_low.xml"
+    },
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/drawable-anydpi-v21/ic_call_decline_low.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/drawable-anydpi-v21/ic_call_decline_low.xml"
+    },
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/drawable-anydpi-v21/ic_call_answer_video.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/drawable-anydpi-v21/ic_call_answer_video.xml"
+    }
+]

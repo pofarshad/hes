@@ -1,0 +1,1 @@
+com.yourcompany.vpnresellerapp.core_domain

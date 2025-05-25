@@ -1,0 +1,160 @@
+/home/codespace/.gradle/caches/8.13/transforms/63eea69683be1464c2e4775f2cb7ee93/transformed/jetified-runtime-release/jars/lint.jar: Warning: Library lint checks reference invalid APIs; these checks will be skipped!
+
+Lint found an issue registry (androidx.compose.runtime.lint.RuntimeIssueRegistry)
+which contains some references to invalid API:
+org.jetbrains.kotlin.analysis.api.session.KtAnalysisSessionProvider: org.jetbrains.kotlin.analysis.api.lifetime.KtLifetimeTokenFactory getTokenFactory()
+(Referenced from androidx/compose/runtime/lint/AutoboxingStateCreationDetector.class)
+
+Therefore, this lint check library is not included
+in analysis. This affects the following lint checks:
+AutoboxingStateValueProperty
+AutoboxingStateCreation
+CoroutineCreationDuringComposition
+FlowOperatorInvokedInComposition
+ComposableLambdaParameterNaming
+ComposableLambdaParameterPosition
+ComposableNaming
+StateFlowValueCalledInComposition
+CompositionLocalNaming
+MutableCollectionMutableState
+ProduceStateDoesNotAssignValue
+RememberReturnType
+OpaqueUnitKey
+UnrememberedMutableState
+
+To use this lint check, upgrade to a more recent version
+of the library. [ObsoleteLintCustomCheck]
+/home/codespace/.gradle/caches/8.13/transforms/20ad3c34b22158a0121cb8d87822e304/transformed/lifecycle-livedata-core-2.8.0/jars/lint.jar: Warning: Library lint checks reference invalid APIs; these checks will be skipped!
+
+Lint found an issue registry (androidx.lifecycle.lint.LiveDataCoreIssueRegistry)
+which contains some references to invalid API:
+org.jetbrains.kotlin.analysis.api.session.KtAnalysisSessionProvider: org.jetbrains.kotlin.analysis.api.lifetime.KtLifetimeTokenFactory getTokenFactory()
+(Referenced from androidx/lifecycle/lint/NonNullableMutableLiveDataDetector$createUastHandler$1.class)
+
+Therefore, this lint check library is not included
+in analysis. This affects the following lint checks:
+NullSafeMutableLiveData
+
+To use this lint check, upgrade to a more recent version
+of the library. [ObsoleteLintCustomCheck]
+
+   Explanation for issues of type "ObsoleteLintCustomCheck":
+   Lint can be extended with "custom checks": additional checks implemented by
+   developers and libraries to for example enforce specific API usages
+   required by a library or a company coding style guideline.
+
+   The Lint APIs are not yet stable, so these checks may either cause a
+   performance degradation, or stop working, or provide wrong results.
+
+   This warning flags custom lint checks that are found to be using obsolete
+   APIs and will need to be updated to run in the current lint environment.
+
+   It may also flag issues found to be using a newer version of the API,
+   meaning that you need to use a newer version of lint (or Android Studio or
+   Gradle plugin etc) to work with these checks.
+
+/workspaces/hes/VpnResellerApp/app/src/main/AndroidManifest.xml:24: Warning: Redundant label can be removed [RedundantLabel]
+            android:label="@string/app_name"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "RedundantLabel":
+   When an activity does not have a label attribute, it will use the one from
+   the application tag. Since the application has already specified the same
+   label, the label on this activity can be omitted.
+
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:3: Warning: A newer version of com.android.application than 8.2.2 is available: 8.10.0 [GradleDependency]
+gradlePlugin = "8.2.2" # Or your targeted AGP version
+               ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:3: Warning: A newer version of com.android.library than 8.2.2 is available: 8.10.0 [GradleDependency]
+gradlePlugin = "8.2.2" # Or your targeted AGP version
+               ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:6: Warning: A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0 [GradleDependency]
+coreKtx = "1.13.1"
+          ~~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:7: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.8.0 is available: 2.9.0 [GradleDependency]
+lifecycleRuntimeKtx = "2.8.0"
+                      ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:7: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.0 is available: 2.9.0 [GradleDependency]
+lifecycleRuntimeKtx = "2.8.0"
+                      ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:7: Warning: A newer version of androidx.lifecycle:lifecycle-viewmodel-ktx than 2.8.0 is available: 2.9.0 [GradleDependency]
+lifecycleRuntimeKtx = "2.8.0"
+                      ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:8: Warning: A newer version of androidx.activity:activity-compose than 1.9.0 is available: 1.10.1 [GradleDependency]
+activityCompose = "1.9.0"
+                  ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:9: Warning: A newer version of androidx.compose:compose-bom than 2024.05.00 is available: 2025.05.01 [GradleDependency]
+composeBom = "2024.05.00"
+             ~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:10: Warning: A newer version of androidx.compose.material3:material3 than 1.2.1 is available: 1.3.2 [GradleDependency]
+material3 = "1.2.1"
+            ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:11: Warning: A newer version of androidx.navigation:navigation-compose than 2.7.7 is available: 2.9.0 [GradleDependency]
+navigationCompose = "2.7.7"
+                    ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:12: Warning: A newer version of androidx.room:room-compiler than 2.6.1 is available: 2.7.1 [GradleDependency]
+room = "2.6.1"
+       ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:12: Warning: A newer version of androidx.room:room-ktx than 2.6.1 is available: 2.7.1 [GradleDependency]
+room = "2.6.1"
+       ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:12: Warning: A newer version of androidx.room:room-runtime than 2.6.1 is available: 2.7.1 [GradleDependency]
+room = "2.6.1"
+       ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:16: Warning: A newer version of com.google.android.gms:play-services-auth than 21.2.0 is available: 21.3.0 [GradleDependency]
+playServicesAuth = "21.2.0"
+                   ~~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:19: Warning: A newer version of androidx.work:work-runtime-ktx than 2.9.0 is available: 2.10.1 [GradleDependency]
+workManager = "2.9.0"
+              ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:23: Warning: A newer version of androidx.test.ext:junit than 1.1.5 is available: 1.2.1 [GradleDependency]
+androidxTestExtJunit = "1.1.5" # Corrected from 1.1.5 to a more standard versioning if needed, or keep as is.
+                       ~~~~~~~
+/workspaces/hes/VpnResellerApp/gradle/libs.versions.toml:24: Warning: A newer version of androidx.test.espresso:espresso-core than 3.5.1 is available: 3.6.1 [GradleDependency]
+espressoCore = "3.5.1"
+               ~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/workspaces/hes/VpnResellerApp/app/src/main/res/values/colors.xml:4: Warning: The resource R.color.purple_200 appears to be unused [UnusedResources]
+    <color name="purple_200">#FFBB86FC</color>
+           ~~~~~~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/src/main/res/values/colors.xml:5: Warning: The resource R.color.purple_500 appears to be unused [UnusedResources]
+    <color name="purple_500">#FF6200EE</color>
+           ~~~~~~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/src/main/res/values/colors.xml:6: Warning: The resource R.color.purple_700 appears to be unused [UnusedResources]
+    <color name="purple_700">#FF3700B3</color>
+           ~~~~~~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/src/main/res/values/colors.xml:7: Warning: The resource R.color.teal_200 appears to be unused [UnusedResources]
+    <color name="teal_200">#FF03DAC5</color>
+           ~~~~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/src/main/res/values/colors.xml:8: Warning: The resource R.color.teal_700 appears to be unused [UnusedResources]
+    <color name="teal_700">#FF018786</color>
+           ~~~~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/src/main/res/values/colors.xml:9: Warning: The resource R.color.black appears to be unused [UnusedResources]
+    <color name="black">#FF000000</color>
+           ~~~~~~~~~~~~
+/workspaces/hes/VpnResellerApp/app/src/main/res/values/colors.xml:10: Warning: The resource R.color.white appears to be unused [UnusedResources]
+    <color name="white">#FFFFFFFF</color>
+           ~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+0 errors, 27 warnings

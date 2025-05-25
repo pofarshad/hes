@@ -1,0 +1,2 @@
+com.yourcompany.vpnresellerapp.feature_invoices.R
+com.yourcompany.vpnresellerapp.feature_invoices.R: R()

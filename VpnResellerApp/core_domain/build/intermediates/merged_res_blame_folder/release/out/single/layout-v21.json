@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "com.yourcompany.vpnresellerapp.core_domain-merged_res-10:/layout-v21/notification_action.xml",
+        "source": "com.yourcompany.vpnresellerapp.core_domain-core-1.13.1-1:/layout-v21/notification_action.xml"
+    }
+]

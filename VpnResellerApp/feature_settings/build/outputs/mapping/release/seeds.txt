@@ -1,0 +1,2 @@
+com.yourcompany.vpnresellerapp.feature_settings.R
+com.yourcompany.vpnresellerapp.feature_settings.R: R()

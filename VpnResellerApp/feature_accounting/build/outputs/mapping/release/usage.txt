@@ -1,0 +1,10 @@
+com.example.featureaccounting.ui.AccountingScreenKt$AccountingScreen$1$1$1$1
+com.example.featureaccounting.ui.AccountingScreenKt$AccountingScreen$1$1$2$1
+com.example.featureaccounting.ui.AccountingScreenKt$AccountingScreen$1
+com.example.featureaccounting.ui.AccountingScreenKt$AccountingScreen$2
+com.example.featureaccounting.ui.AccountingScreenKt
+com.example.featureaccounting.ui.ComposableSingletons$AccountingScreenKt$lambda-1$1
+com.example.featureaccounting.ui.ComposableSingletons$AccountingScreenKt$lambda-2$1
+com.example.featureaccounting.ui.ComposableSingletons$AccountingScreenKt$lambda-3$1
+com.example.featureaccounting.ui.ComposableSingletons$AccountingScreenKt$lambda-4$1
+com.example.featureaccounting.ui.ComposableSingletons$AccountingScreenKt

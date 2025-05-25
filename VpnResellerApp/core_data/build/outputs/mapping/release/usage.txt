@@ -1,0 +1,5 @@
+com.example.coredata.backup.BackupManager
+com.yourcompany.vpnresellerapp.core_data.model.Invoice
+com.yourcompany.vpnresellerapp.core_data.model.Payment
+com.yourcompany.vpnresellerapp.core_data.model.Representative
+com.yourcompany.vpnresellerapp.core_data.model.Transaction

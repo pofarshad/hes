@@ -1,2 +1,0 @@
-/workspaces/hes/VpnResellerApp/feature_representatives/src/main/java/com/example/featurerepresentatives/ui/RepresentativeScreen.kt
-/workspaces/hes/VpnResellerApp/feature_representatives/src/main/java/com/example/featurerepresentatives/ui/TelegramIntegrationComponent.kt
