@@ -114,7 +114,7 @@ fun AddEditRepresentativeScreen(
                 options = DiscountType.values().toList(),
                 selectedOption = discountType,
                 onOptionSelected = { discountType = it },
-                optionToString = { type -> stringResource(id = type.toStringRes()) }
+                optionToResId = { it.toStringRes() }
             )
             Spacer(modifier = Modifier.height(8.dp))
 
@@ -131,7 +131,7 @@ fun AddEditRepresentativeScreen(
                 options = SubscriptionType.values().toList(),
                 selectedOption = defaultSubscriptionType,
                 onOptionSelected = { defaultSubscriptionType = it },
-                optionToString = { type -> stringResource(id = type.toStringRes()) }
+                optionToResId = { it.toStringRes() }
             )
             Spacer(modifier = Modifier.height(8.dp))
 
@@ -176,12 +176,13 @@ fun AddEditRepresentativeScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class) // Add OptIn here
 @Composable
 fun <T> EnumDropdown(
     options: List<T>,
     selectedOption: T,
     onOptionSelected: (T) -> Unit,
-    optionToString: (T) -> String,
+    optionToResId: (T) -> Int, // Changed parameter name and type
     modifier: Modifier = Modifier
 ) {
     var expanded by remember { mutableStateOf(false) }
@@ -192,7 +193,7 @@ fun <T> EnumDropdown(
         modifier = modifier.fillMaxWidth()
     ) {
         OutlinedTextField(
-            value = optionToString(selectedOption),
+            value = stringResource(id = optionToResId(selectedOption)), // Use stringResource here
             onValueChange = {},
             readOnly = true,
             trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded) },
@@ -204,7 +205,7 @@ fun <T> EnumDropdown(
         ) {
             options.forEach { option ->
                 DropdownMenuItem(
-                    text = { Text(optionToString(option)) },
+                    text = { Text(stringResource(id = optionToResId(option))) }, // Use stringResource here
                     onClick = {
                         onOptionSelected(option)
                         expanded = false

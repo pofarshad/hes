@@ -12,9 +12,9 @@ import javax.inject.Singleton
 import com.vpnreseller.core_data.google.GoogleSheetsService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import com.vpnreseller.core_domain.model.Invoice
-import com.vpnreseller.core_domain.model.InvoiceLineItem
 import java.util.UUID
+import com.vpnreseller.core_data.local.entity.toDomainModel
+import com.vpnreseller.core_data.local.entity.toEntity
 
 interface InvoiceRepository {
     fun getAllInvoices(): Flow<List<Invoice>>

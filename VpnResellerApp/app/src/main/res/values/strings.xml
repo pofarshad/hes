@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">VpnResellerApp</string>
     <string name="subscription_type_unlimited">نامحدود</string>
 
     <!-- Invoice UI -->
@@ -10,5 +11,33 @@
     <string name="label_spreadsheet_id">شناسه صفحه گسترده</string>
     <string name="label_range">محدوده</string>
     <string name="button_import">وارد کردن</string>
+
+    <!-- HomeScreen -->
+    <string name="main_dashboard">داشبورد اصلی</string>
+    <string name="welcome_message">خوش آمدید!</string>
+
+    <!-- Representatives -->
+    <string name="representatives_title">نمایندگان</string>
+    <string name="add_representative_fab_description">افزودن نماینده</string>
+    <string name="search_representatives_hint">جستجوی نمایندگان...</string>
+    <string name="empty_representatives_list">هیچ نماینده‌ای یافت نشد.</string>
+    <string name="edit_representative_title">ویرایش نماینده</string>
+    <string name="add_representative_title">افزودن نماینده</string>
+    <string name="label_full_name">نام کامل</string>
+    <string name="label_admin_username_marzban">نام کاربری ادمین (مرزبان)</string>
+    <string name="label_telegram_link">لینک تلگرام</string>
+    <string name="label_price_per_gb_limited">قیمت هر گیگ (محدود)</string>
+    <string name="label_monthly_unlimited_price">قیمت ماهانه (نامحدود)</string>
+    <string name="label_discount_type">نوع تخفیف</string>
+    <string name="label_discount_value">مقدار تخفیف</string>
+    <string name="label_default_subscription_type">نوع اشتراک پیش‌فرض</string>
+    <string name="label_default_duration_months">مدت زمان پیش‌فرض (ماه)</string>
+    <string name="label_is_active">فعال</string>
+    <string name="label_notes">یادداشت‌ها</string>
+    <string name="button_save">ذخیره</string>
+    <string name="discount_type_none">هیچ‌کدام</string>
+    <string name="discount_type_percentage">درصدی</string>
+    <string name="discount_type_time_based">مبتنی بر زمان</string>
+    <string name="subscription_type_limited">محدود</string>
+
 </resources>
-</create_file>

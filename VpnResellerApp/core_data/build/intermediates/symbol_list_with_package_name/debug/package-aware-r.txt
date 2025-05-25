@@ -1,0 +1,2 @@
+com.vpnreseller.core_data
+string app_name

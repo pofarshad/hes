@@ -10,6 +10,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
+import androidx.navigation.compose.rememberNavController
 import com.vpnreseller.app.navigation.AppNavigationHost
 import com.vpnreseller.core_ui.theme.VpnResellerAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,7 +32,8 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize(),
                         color = MaterialTheme.colorScheme.background
                     ) {
-                        AppNavigationHost()
+                        val navController = rememberNavController()
+                        AppNavigationHost(navController = navController)
                     }
                 }
             }

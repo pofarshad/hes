@@ -8,10 +8,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.InputStream
 import java.security.GeneralSecurityException
+import javax.inject.Inject
+import javax.inject.Named
 
-class GoogleSheetsService(
+class GoogleSheetsService @Inject constructor(
     private val credentialsStream: InputStream,
-    private val applicationName: String
+    @Named("applicationName") private val applicationName: String
 ) {
     private val jsonFactory = GsonFactory.getDefaultInstance()
     private val httpTransport = GoogleNetHttpTransport.newTrustedTransport()
