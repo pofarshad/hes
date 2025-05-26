@@ -1,8 +1,8 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
-        google()
+        google()  // This must be first for Android plugins
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 
@@ -10,7 +10,7 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        google()
+        google()  // This must be first for Android dependencies
         mavenCentral()
     }
     // Enable version catalog
