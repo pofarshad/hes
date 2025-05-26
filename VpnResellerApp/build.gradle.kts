@@ -1,15 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-buildscript {
-    repositories {
-        google()  // This must be first for Android Gradle Plugin
-        mavenCentral()
-    }
-    dependencies {
-        classpath(libs.android.gradle)
-        classpath(libs.kotlin.gradle)
-        classpath(libs.hilt.gradle)
-    }
-}
+
+// buildscript block is removed as plugin management is handled in settings.gradle.kts
 
 plugins {
     alias(libs.plugins.android.application) apply false
