@@ -1,101 +1,95 @@
 package com.vpnreseller.core_data.local.entity
 
 import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
-import com.vpnreseller.core_domain.model.Invoice // Changed from InvoiceHeader
-import com.vpnreseller.core_domain.model.InvoiceLineItem
+import com.vpnreseller.core_domain.model.Invoice
 import com.vpnreseller.core_domain.model.InvoiceStatus
 import java.util.Date
 
 /**
- * Room entity for Invoice
+ * Database entity for invoices.
+ * Has a foreign key relationship with RepresentativeEntity and is indexed for faster queries.
  */
-@Entity(tableName = "invoices") // Changed from invoice_headers
+@Entity(
+    tableName = "invoices",
+    foreignKeys = [
+        ForeignKey(
+            entity = RepresentativeEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["representativeId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ],
+    indices = [
+        Index("representativeId"),
+        Index("status"),
+        Index("generationDate")
+    ]
+)
 data class InvoiceEntity(
     @PrimaryKey
     val id: String,
     val representativeId: String,
-    val generationDate: Long, // Store as timestamp
+    val generationDate: Date,
     val totalAmount: Double,
-    val status: String, // Represents InvoiceStatus enum
-    val isSentToTelegram: Boolean, // Changed from isSent
+    val status: InvoiceStatus,
+    val isSentToTelegram: Boolean,
     val pdfPath: String?,
     val imagePath: String?,
-    val importedSheetData: Map<String, String>? // Room will use TypeConverter
-)
-
-/**
- * Room entity for Invoice Line Item
- */
-@Entity(tableName = "invoice_line_items")
-data class InvoiceLineItemEntity(
-    @PrimaryKey
-    val id: String,
-    val invoiceHeaderId: String,
-    val description: String,
-    val quantity: Int,
-    val unitPrice: Double,
-    val totalPrice: Double
-)
-
-/**
- * Extension function to convert InvoiceEntity to Invoice domain model
- */
-fun InvoiceEntity.toDomainModel(): Invoice {
-    return Invoice(
+    val importedSheetData: String? // Raw data from Google Sheet for reference
+) {
+    fun toDomainModel() = Invoice(
         id = id,
         representativeId = representativeId,
-        generationDate = Date(generationDate),
+        generationDate = generationDate,
         totalAmount = totalAmount,
-        status = InvoiceStatus.valueOf(status),
+        status = status,
         isSentToTelegram = isSentToTelegram,
         pdfPath = pdfPath,
         imagePath = imagePath,
-        importedSheetData = importedSheetData // Pass through, Room handles conversion
+        importedSheetData = importedSheetData?.let { mapOf("raw" to it) }
     )
+
+    companion object {
+        fun fromDomainModel(invoice: Invoice) = InvoiceEntity(
+            id = invoice.id,
+            representativeId = invoice.representativeId,
+            generationDate = invoice.generationDate,
+            totalAmount = invoice.totalAmount,
+            status = invoice.status,
+            isSentToTelegram = invoice.isSentToTelegram,
+            pdfPath = invoice.pdfPath,
+            imagePath = invoice.imagePath,
+            importedSheetData = invoice.importedSheetData?.get("raw")
+        )
+    }
 }
 
 /**
- * Extension function to convert Invoice domain model to InvoiceEntity
+ * Represents the relationship between an invoice and its line items.
+ * Used for @Transaction queries that need to fetch both invoice and its items.
  */
-fun Invoice.toEntity(): InvoiceEntity {
-    return InvoiceEntity(
-        id = id,
-        representativeId = representativeId,
-        generationDate = generationDate.time,
-        totalAmount = totalAmount,
-        status = status.name,
-        isSentToTelegram = isSentToTelegram,
-        pdfPath = pdfPath,
-        imagePath = imagePath,
-        importedSheetData = importedSheetData // Pass through, Room handles conversion
-    )
-}
+data class InvoiceWithLineItems(
+    @androidx.room.Embedded
+    val invoice: InvoiceEntity,
 
-/**
- * Extension function to convert InvoiceLineItemEntity to InvoiceLineItem domain model
- */
-fun InvoiceLineItemEntity.toDomainModel(): InvoiceLineItem {
-    return InvoiceLineItem(
-        id = id,
-        invoiceHeaderId = invoiceHeaderId,
-        description = description,
-        quantity = quantity,
-        unitPrice = unitPrice,
-        totalPrice = totalPrice
+    @androidx.room.Relation(
+        parentColumn = "id",
+        entityColumn = "invoiceHeaderId"
     )
-}
-
-/**
- * Extension function to convert InvoiceLineItem domain model to InvoiceLineItemEntity
- */
-fun InvoiceLineItem.toEntity(): InvoiceLineItemEntity {
-    return InvoiceLineItemEntity(
-        id = id,
-        invoiceHeaderId = invoiceHeaderId,
-        description = description,
-        quantity = quantity,
-        unitPrice = unitPrice,
-        totalPrice = totalPrice
+    val lineItems: List<InvoiceLineItemEntity>
+) {
+    fun toDomainModel() = Invoice(
+        id = invoice.id,
+        representativeId = invoice.representativeId,
+        generationDate = invoice.generationDate,
+        totalAmount = invoice.totalAmount,
+        status = invoice.status,
+        isSentToTelegram = invoice.isSentToTelegram,
+        pdfPath = invoice.pdfPath,
+        imagePath = invoice.imagePath,
+        importedSheetData = invoice.importedSheetData?.let { mapOf("raw" to it) }
     )
 }
